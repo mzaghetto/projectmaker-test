@@ -11,6 +11,7 @@ export async function createAdminUser(dataSource: DataSource) {
 
   const existingAdmin = await userService.getUserByEmail(adminEmail);
   if (existingAdmin) {
+    console.log('Admin user already exists. ID:', existingAdmin.id);
     return existingAdmin;
   }
 
@@ -19,6 +20,7 @@ export async function createAdminUser(dataSource: DataSource) {
     adminEmail,
     adminRole,
   );
+  console.log('Admin user created successfully. ID:', newAdmin.id);
 
   return newAdmin;
 }
