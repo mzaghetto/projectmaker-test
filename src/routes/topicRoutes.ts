@@ -86,7 +86,7 @@ const topicController = new TopicController();
  *               content:
  *                 type: string
  *                 example: Content of the new topic.
- *               parentTopicGroupId:
+ *               parentTopicId:
  *                 type: string
  *                 example: d5fcd5e0-4b8f-4b8f-8b8f-4b8f4b8f4b8f
  *     responses:
