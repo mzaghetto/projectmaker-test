@@ -70,17 +70,18 @@ To run the project, follow these steps:
     ```
     This will start a PostgreSQL container named `db` and expose it on port `5432`.
 
-3.  **Run Database Migrations:**
-    After the database container is up, apply the migrations to set up the database schema:
+3.  **Start the Development Server:**
     ```bash
-    npm run typeorm migration:run
-    ```
-
-4.  **Start the Development Server:**
-    ```bash
-    npm run dev
+    npm run start:dev
     ```
     The server will be running at the port specified in your `.env` file (default: `http://localhost:3000`).
+
+4.  **Create your first user (admin):**
+    ```bash
+    npm run create-admin
+    ```
+    This will use a script to create an admin account for your use
+    > Look in terminal logs to get the admin user id to use in the "Authorizer / `x-user-id`" or connect into your database to get the admin id
 
 ## Database Setup
 
@@ -102,12 +103,7 @@ This project uses PostgreSQL as its database, managed via Docker. Follow these s
     *   **User:** `user`
     *   **Password:** `password`
 
-3.  **Run Database Migrations:**
-    ```bash
-    npm run typeorm migration:run
-    ```
-
-4.  **Stop the PostgreSQL container (optional):**
+3.  **Stop the PostgreSQL container (optional):**
     ```bash
     docker-compose down
     ```
@@ -216,7 +212,8 @@ The project includes a comprehensive suite of unit and integration tests to ensu
 To run the tests:
 
 ```bash
-npm test
+npm run test:unit
+npm run test:integration
 ```
 
 **Test Coverage:** The project currently boasts **100% test coverage** for the services ensuring high code quality and stability.
